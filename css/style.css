@@ -15,9 +15,9 @@
 
 
   body{
-    display: flex;
+    display: block;
     box-sizing: border-box;
-    flex-direction: column;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -27,19 +27,41 @@
   }
 
   nav{
-    display: block;
-    position: fixed;
-    width: 20%;
-    background-color: red;
-    height: 100%;
+   margin: auto;
+   padding: auto;
+    width: 100%;
+    background-color: pink;
+    height: 3%;
+    border: none;
+    border-radius: 5px;
+    position:fixed;
+  }
+  nav ul{
+    display: flex;
+    flex-direction: row;
+   margin: 0;
+   padding:0;
 
+    justify-content: space-evenly;
+  }
+  nav a{
+    text-decoration: none;
+    color:black;
   }
 
   section{
-    margin-left:500px ;
     
-    color: pink;
-    max-width:30% ;
+    display: block;
+    position: relative;
+    top: 100px;
+    background-image:url(/img/images.png);
+    background-position: center;
+    margin: auto;
+    padding: auto;
+    
+    color:  #347f8a;
+   height: 60%;
+   width: 50%;
     
     border-color: black;
     border-radius: 4px;
@@ -59,6 +81,12 @@
     border-radius: 45%;
     width: 250px;
 
+  }
+  @media screen and (max-width: 850px) {
+    section > img{
+        border-radius: 45%;
+        width: 58%;
+    }
   }
 
   /* ziziziziziziziizziziizziiziz*/
