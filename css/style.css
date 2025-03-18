@@ -74,12 +74,12 @@ height: 69px;
     display: block;
     position: relative;
     top: 100px;
-    background-image:url('/img/DZ-213.png');
+    background-image:url('/img/img-fond.jpeg');
     background-position: center;
     margin: auto;
     padding: auto;
     
-    color:  #347f8a;
+    color:  red;
    height: 60%;
    width: 50%;
     
