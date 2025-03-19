@@ -4,25 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Présentation</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-        <a  href="https://vtuberfr.fandom.com/fr/wiki/Riri" target="_blank"><img src="img/img-logo.png" alt="balti-img"></a>
-        </div>
-        <ul>
-            <li><a href="#">lien 1</a></li>
-            <li><a href="#">lien 2</a></li>
-            <li><a href="#">lien 3</a></li>
-            <li><a href="#">lien 4</a></li>
-            <li><a href="#">lien 5</a></li>
-        </ul>
-    </nav>
+    
+    
+    
+    
+    
+    
 
-    <section>
+
+
+<nav class="bg-pink-300">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2  hover:bg-gray-700 hover:text-white " aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+          <div class="flex shrink-0 items-end">
+            <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Ethan">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Acceuille</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-700 hover:text-white">à propos</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Projects</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-700 hover:text-white">contact</a>
+            </div>
+          </div>
+        </div>
+        
+  
+          <!-- Profile dropdown -->
+          
+  
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Acceuille</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">à propos</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Projects</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">Contact</a>
+      </div> 
+    </div>
+  </nav>
+  
+  <section>
        <img src="img/img-icone.png" alt="bassmospp">
         <H2>Nom & prénom</H2>
+        
         <p> grand paragraphe </p>
         <p>petit paragraphe descriptif </p>
     </section>
