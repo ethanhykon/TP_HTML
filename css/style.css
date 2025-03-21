@@ -1,1 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+    --font-roboto: "Roboto", sans-serif; 
+    --font-Boldonse: "Boldons", sans-serif;
+  }
