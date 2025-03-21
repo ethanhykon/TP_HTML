@@ -1,8 +1,10 @@
-#Bienvenue sur mon Projet
+# Bienvenue sur mon Projet
+Ce projet est un petit portfolio qui me présente.
+
+pour l'instant le formulaire de contacte n'est pa fonctionnelle 
 
 ##Technologie utilisé
 
-tailwind css installé en cli
+Tailwind css (installé en cli)
 Javascript
 html
-npx @tailwindcss/cli -i ./css/style.css -o ./src/output.css --watch
