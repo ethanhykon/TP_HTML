@@ -27,3 +27,18 @@ btn.addEventListener('click', function(){
       } 
 
 })
+
+// scroll padding
+
+const navigation = document.querySelector("nav");
+
+const navigation_height = navigation.offsetHeight;
+
+document.documentElement.style.setProperty("--scroll-padding",
+  navigation_height + "px"
+);
+
+
+
+// form verificatioon
+
