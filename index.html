@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Portfolio TP</title>
-   <!--- <link href="./css/style.css" rel="stylesheet"> --->
+   
     <script defer src="./js/main.js"></script>
     <link href="./src/output.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
-          <button type="button" id="btn_menu" class="relative  inline-flex items-center justify-center rounded-md p-2  hover:bg-violet-600 hover:text-white " aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" id="btn_menu" class="relative  inline-flex items-center justify-center rounded-md p-2  hover:bg-violet-600 hover:text-white "  aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -22,7 +22,7 @@
   
               Menu open: "hidden", Menu closed: "block"
           -->
-            <svg id="btn_opn"class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <svg id="btn_opn" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
             <!--
@@ -75,7 +75,7 @@
   
 
   <!--hero section-->
-  <section id="hero" class="  h-dvh bg-indigo-950 ">
+  <section id="hero" class="  h-lvh bg-indigo-950 ">
     
     <div class="  flex flex-col justify-center py-120 ">
       
@@ -110,8 +110,10 @@
         <br class="md:hidden">
         
         <p class="text-center text-lg">Je m'appelle Ethan et je suis actuellement étudiant en BTS SIO, option SISR. Depuis toujours, je suis passionné par l'informatique et tout ce qui touche à la technologie. Mon parcours en BTS m'a permis de développer des compétences solides dans le domaine des réseaux et des systèmes informatiques.
-        </p> <p  class="text-center text-lg">Mon objectif professionnel est de faire carrière dans les réseaux et les datacenters. Je suis particulièrement attiré par la gestion et l'optimisation des infrastructures réseau, ainsi que par la sécurité des systèmes d'information. J'aime relever des défis techniques et trouver des solutions innovantes pour améliorer les performances et la fiabilité des systèmes.</p>
-        </p>
+        </p> 
+        
+        <p class="text-center text-lg">Mon objectif professionnel est de faire carrière dans les réseaux et les datacenters. Je suis particulièrement attiré par la gestion et l'optimisation des infrastructures réseau, ainsi que par la sécurité des systèmes d'information. J'aime relever des défis techniques et trouver des solutions innovantes pour améliorer les performances et la fiabilité des systèmes.</p>
+        
         
         
         <br class="md:hidden">
@@ -124,16 +126,16 @@
       <br class="md:hidden">
       <br class="md:hidden">
 
-      <div class="  place-self-center  w-full max-w-9/10">
+      <div class="place-self-center  w-full max-w-9/10">
         
           <div style="position: relative; z-index: -1; width: 100%; height: 0; padding-top: 141.4286%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-            <iframe loading="lazy" style="position: fixed;  width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"src="https://www.canva.com/design/DAFY2bIZb1g/H38zKprtB0szd1H9dy4ulg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+            <iframe loading="lazy" style="position: fixed;  width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAFY2bIZb1g/H38zKprtB0szd1H9dy4ulg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
             </iframe> 
           </div>
 
       </div>      
     </div>
-    </div>
+    
   </section>
 
 
@@ -141,12 +143,52 @@
 
 
 
-  <section class=" size-40000000 max-w-full" id="poke">
+  <section class=" h-full w-full  " id="poke">
     <h2 class="text-center bg-fuchsia-100 tracking-wide text-indigo-950 text-xl font-bold uppercase rounded-md shadow-lg">Poke Api</h2>
     
-    
-    
+    <div class=" md:flex md:flex-row-reverse lg:w-9/10 min-h-100 h-full justify-around ">
       
+      <div class="  flex flex-col md:items-center " id="poke_box">
+            <br>
+          
+            <div id="pokemon_main" class=" flex flex-col items-center   w-full ">
+              <h3 id="pokemon_nom" class="text-gray-800   text-center font-bold uppercase text-2xl " >  </h3>
+            
+              <br class="hidde md:block">
+              <br class="hidde md:block">
+              <img  class="w-5/10 max-w-96 md:hidden"  src="" alt="pokemon" id="pokemon_img">
+              <div id="pokemon_type" class=" flex flex-col justify-center items-center  md:flex-row ">
+            
+              </div>
+            </div>
+          <br>
+          <br>
+          
+        <div id="pokemon_sec" class=" flex flex-col-reverse items-center justify-around  ">
+          
+          <input type="search"  name="search_pokemon" placeholder="Cherchez votre pokemon" id="search_pokemon" class=" md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center"> 
+        <br>
+        <br>
+        <button class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center" >Pokemon aléatoire</button>
+            <div class="text-center ">
+              <div id="poke_desc_1"></div>
+              <br >
+              <div id="poke_desc_2"></div>
+              <br>
+              <div id="poke_desc_3"></div>
+            </div>
+          
+        </div>
+      </div> 
+
+        <div class="hidden md:flex flex-col items-center w-5/10 ">
+          <br>
+          <input type="search" placeholder="Cherchez votre pokemon" id="search_pokemon" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center">
+          <br>
+          <button class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center" >Pokemon aléatoire</button>
+          <img  class="w-full  max-w-150 "  src="" alt="pokemon" id="pokemon_img2">
+      </div>    
+  </div>
 
   </section>
 
@@ -167,9 +209,9 @@
         <br>
         <div class="mb-5">
           <div class="hidden text-red-500  font-medium " id="er_nom"> veuillez saisir un nom & un prénom valide</div>
-        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nom & Prénom</label>
-        <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ark:border-gray-600 " placeholder="Votre nom & prénom" required />
-      </div>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nom & Prénom</label>
+          <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ark:border-gray-600 " placeholder="Votre nom & prénom" required />
+        </div>
       <div class="mb-5">
         <div class="hidden text-red-500 font-medium " id="er_mail"> veuillez saisir un mail valide</div>
         <label for="email" class= "block mb-2 text-sm font-medium text-gray-900" >Email</label>

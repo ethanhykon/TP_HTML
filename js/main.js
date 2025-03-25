@@ -117,3 +117,83 @@ function valid(e) {
 }
 
 //   scroll-padding: var(--scroll-padding,5rem); 
+
+//poke api
+
+
+
+
+  const poke_url = "https://pokeapi.co/api/v2/pokemon/";
+  
+
+ window.onload = function(){
+ fetchPokemonData();
+    };
+    async function fetchPokemonData() {
+      
+      try {
+        const base_poke = poke_url + "1"
+      
+        const response = await fetch(base_poke);
+        
+        
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        const pokemon = await response.json();
+        displayPokemonCard(pokemon);
+      } catch (error) {
+        console.log("ereur avec le pokemon :" + error  );
+      }
+    }
+
+    async function displayPokemonCard(pokemon){
+      //console.log(pokemon);
+
+      const pokemon_name = pokemon["name"].toUpperCase();
+      const pokemon_type = pokemon["types"];
+      const pokemon_sprite = pokemon["sprites"]["front_default"];
+      
+      let res = await fetch(pokemon["species"]["url"]);
+      const pokemon_desc = await res.json();
+      // console.log(pokemon_desc);
+      
+      const pokemon_desc_1 = pokemon_desc["flavor_text_entries"][16]["flavor_text"];
+
+      const pokemon_desc_2 = pokemon_desc["flavor_text_entries"][40]["flavor_text"];
+      
+      const pokemon_desc_3 = pokemon_desc["flavor_text_entries"][57]["flavor_text"]; 
+      
+      document.getElementById("pokemon_img").src = pokemon_sprite;
+      document.getElementById("pokemon_img2").src = pokemon_sprite;
+      
+      document.getElementById("pokemon_nom").innerText = pokemon_name;
+      
+      document.getElementById("poke_desc_1").innerText = pokemon_desc_1;
+       document.getElementById("poke_desc_2").innerText = pokemon_desc_2;
+      document.getElementById("poke_desc_3").innerText = pokemon_desc_3; 
+     
+      
+      let type_div = document.getElementById("pokemon_type");
+      for(let i = 0; i < pokemon_type.length; i++){
+        let type = document.createElement("span");
+        type.innerText = pokemon_type[i]["type"]["name"].toUpperCase();
+        type.classList.add(pokemon_type[i]["type"]["name"]);
+        type.classList.add("rounded-full");
+        type.classList.add("border-solid");
+        type.classList.add("border-black");
+        type.classList.add("border-2");
+        type.classList.add("w-[200px]");
+        type.classList.add("lg:mx-2");
+        type.classList.add("text-center");
+      
+        
+        type_div.append(type);
+        console.log(type)
+
+      }
+      
+      
+
+
+    };
