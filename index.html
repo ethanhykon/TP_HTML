@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Portfolio TP</title>
-   
+    <link rel="icon" type="image/x-icon" href="/img/logo_ebd.png">
     <script defer src="./js/main.js"></script>
     <link href="./src/output.css" rel="stylesheet">
 </head>
@@ -75,7 +75,7 @@
   
 
   <!--hero section-->
-  <section id="hero" class="  h-lvh bg-indigo-950 ">
+  <section id="hero" class=" flex flex-col justify-center h-lvh bg-indigo-950 ">
     
     <div class="  flex flex-col justify-center py-120 ">
       
@@ -84,7 +84,7 @@
             
             <h2 class="mt-8 mb-6 text-4xl lg:text-5xl font-bold text-gray-100 uppercase  ">Bienvenue sur mon portfolio</h2>
            
-            <a id="btn_hero" class="mr-6 mb-4 inline-block w-auto rounded border-2 border-transparent bg-gray-200 px-8 py-5 
+            <a id="btn_hero" class="mr-6 mb-4 px-8 py-5 inline-block w-auto rounded border-2 border-transparent bg-gray-200 
             text-sm font-bold text-gray-800 uppercase  transition duration-450 hover:bg-violet-800 hover:text-white
              hover:shadow-pink-300/50 hover:shadow-2xl"  href="#a_propos">En savoir plus</a>
           </div>
@@ -169,7 +169,8 @@
           <input type="search"  name="search_pokemon" placeholder="Cherchez votre pokemon" id="search_pokemon" class=" md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center"> 
         <br>
         <br>
-        <button class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center" >Pokemon aléatoire</button>
+        <button type="button" onclick="alert('Hello world!')" class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center" >Pokemon aléatoire</button>
+        
             <div class="text-center ">
               <div id="poke_desc_1"></div>
               <br >
@@ -185,7 +186,8 @@
           <br>
           <input type="search" placeholder="Cherchez votre pokemon" id="search_pokemon" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center">
           <br>
-          <button class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center" >Pokemon aléatoire</button>
+          <button type="button" onclick="alert('Hello world!')" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center" >Pokemon aléatoire</button>
+          
           <img  class="w-full  max-w-150 "  src="" alt="pokemon" id="pokemon_img2">
       </div>    
   </div>

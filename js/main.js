@@ -124,7 +124,7 @@ function valid(e) {
 
 
   const poke_url = "https://pokeapi.co/api/v2/pokemon/";
-  
+  let poke_id = 1025;
 
  window.onload = function(){
  fetchPokemonData();
@@ -132,7 +132,7 @@ function valid(e) {
     async function fetchPokemonData() {
       
       try {
-        const base_poke = poke_url + "1"
+        const base_poke = poke_url + "1" ;
       
         const response = await fetch(base_poke);
         
@@ -152,6 +152,7 @@ function valid(e) {
 
       const pokemon_name = pokemon["name"].toUpperCase();
       const pokemon_type = pokemon["types"];
+      console.log(pokemon_type);
       const pokemon_sprite = pokemon["sprites"]["front_default"];
       
       let res = await fetch(pokemon["species"]["url"]);
