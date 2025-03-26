@@ -272,6 +272,9 @@
   .sticky {
     position: sticky;
   }
+  .-inset-0 {
+    inset: calc(var(--spacing) * -0);
+  }
   .-inset-0\.5 {
     inset: calc(var(--spacing) * -0.5);
   }
@@ -543,6 +546,12 @@
   .h-screen {
     height: 100vh;
   }
+  .max-h-400 {
+    max-height: calc(var(--spacing) * 400);
+  }
+  .max-h-full {
+    max-height: 100%;
+  }
   .max-h-none {
     max-height: none;
   }
@@ -552,14 +561,35 @@
   .min-h-100 {
     min-height: calc(var(--spacing) * 100);
   }
+  .min-h-250 {
+    min-height: calc(var(--spacing) * 250);
+  }
+  .min-h-300 {
+    min-height: calc(var(--spacing) * 300);
+  }
+  .min-h-500 {
+    min-height: calc(var(--spacing) * 500);
+  }
+  .min-h-50000000 {
+    min-height: calc(var(--spacing) * 50000000);
+  }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
   .w-5\/10 {
     width: calc(5/10 * 100%);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
   .w-9\/10 {
     width: calc(9/10 * 100%);
@@ -575,6 +605,9 @@
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-9 {
+    max-width: calc(var(--spacing) * 9);
   }
   .max-w-9\/10 {
     max-width: calc(9/10 * 100%);
@@ -1654,6 +1687,9 @@
   .text-black {
     color: var(--color-black);
   }
+  .text-blue-700 {
+    color: var(--color-blue-700);
+  }
   .text-blue-700\/85 {
     color: color-mix(in oklab, var(--color-blue-700) 85%, transparent);
   }
@@ -1854,6 +1890,9 @@
   .inset-ring {
     --tw-inset-ring-shadow: inset 0 0 0 1px var(--tw-inset-ring-color, currentColor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-cyan-500 {
+    --tw-shadow-color: var(--color-cyan-500);
   }
   .shadow-cyan-500\/50 {
     --tw-shadow-color: color-mix(in oklab, var(--color-cyan-500) 50%, transparent);
@@ -2323,6 +2362,11 @@
   .md\:items-stretch {
     @media (width >= 48rem) {
       align-items: stretch;
+    }
+  }
+  .md\:justify-around {
+    @media (width >= 48rem) {
+      justify-content: space-around;
     }
   }
   .lg\:mx-2 {

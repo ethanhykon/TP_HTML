@@ -132,7 +132,7 @@ function valid(e) {
     async function fetchPokemonData() {
       
       try {
-        const base_poke = poke_url + "25 " ;
+        const base_poke = poke_url + "25" ;
       
         const response = await fetch(base_poke);
         
