@@ -166,17 +166,12 @@
           
         <div id="pokemon_sec" class=" flex flex-col-reverse items-center justify-around  ">
           
-          <input type="search"  name="search_pokemon" placeholder="Cherchez votre pokemon" id="search_pokemon" class=" md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center"> 
-        <br>
-        <br>
-        <button type="button" onclick="alert('Hello world!')" class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-2  text-center" >Pokemon aléatoire</button>
+          <input type="search"  name="search_pokemon" placeholder="Cherchez votre pokemon" id="search_pokemon" class=" md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-1  text-center"> 
+          
+          <button type="button" onclick="random_poke()" class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-1  text-center  hover:text-white hover:bg-violet-600 hover:border-hidden transition duration-450 " >Pokemon aléatoire</button>
         
-            <div class="text-center ">
-              <div id="poke_desc_1"></div>
-              <br >
-              <div id="poke_desc_2"></div>
-              <br>
-              <div id="poke_desc_3"></div>
+            <div class=" text-center flex   flex-col justify-evenly min-h-100 " id="pokemon_desc">
+              
             </div>
           
         </div>
@@ -186,7 +181,7 @@
           <br>
           <input type="search" placeholder="Cherchez votre pokemon" id="search_pokemon" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center">
           <br>
-          <button type="button" onclick="alert('Hello world!')" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center" >Pokemon aléatoire</button>
+          <button type="button" onclick="random_poke()"  class="border-black border-solid border-2 rounded-full min-w-50 w-5/10 max-w-100 text-center text-black hover:text-white hover:bg-violet-600 transition duration-450 " >Pokemon aléatoire</button>
           
           <img  class="w-full  max-w-150 "  src="" alt="pokemon" id="pokemon_img2">
       </div>    

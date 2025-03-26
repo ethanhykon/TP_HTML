@@ -404,8 +404,8 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
+  .my-1 {
+    margin-block: calc(var(--spacing) * 1);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -2136,6 +2136,14 @@
   }
   .transform-view {
     transform-box: view-box;
+  }
+  .hover\:border-hidden {
+    &:hover {
+      @media (hover: hover) {
+        --tw-border-style: hidden;
+        border-style: hidden;
+      }
+    }
   }
   .hover\:bg-blue-700 {
     &:hover {

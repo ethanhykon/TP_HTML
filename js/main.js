@@ -124,7 +124,7 @@ function valid(e) {
 
 
   const poke_url = "https://pokeapi.co/api/v2/pokemon/";
-  let poke_id = 1025;
+  
 
  window.onload = function(){
  fetchPokemonData();
@@ -132,7 +132,7 @@ function valid(e) {
     async function fetchPokemonData() {
       
       try {
-        const base_poke = poke_url + "1" ;
+        const base_poke = poke_url + "25 " ;
       
         const response = await fetch(base_poke);
         
@@ -147,34 +147,59 @@ function valid(e) {
       }
     }
 
+    
+    
+     async function random_poke(){
+      let i = Math.floor(Math.random() * 1025);
+      console.log(i);
+
+      try{
+        const base_poke = poke_url + i;
+
+      const response = await fetch(base_poke);
+      let desc_fr_1 = document.getElementById("pokemon_desc");
+      let typesDiv = document.getElementById("pokemon_type");
+      
+      while (typesDiv.firstChild) {
+          typesDiv.firstChild.remove();
+          
+      }
+
+      while (desc_fr_1.hasChildNodes()) {
+        desc_fr_1.firstChild.remove();
+      } 
+
+
+
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        const pokemon = await response.json();
+        
+        
+        displayPokemonCard(pokemon);
+    }
+        
+       catch (error) {
+        console.log("ereur avec le pokemon :" + error  );
+      }
+
+    }; 
+
+
+
+
+
     async function displayPokemonCard(pokemon){
       //console.log(pokemon);
 
       const pokemon_name = pokemon["name"].toUpperCase();
-      const pokemon_type = pokemon["types"];
-      console.log(pokemon_type);
-      const pokemon_sprite = pokemon["sprites"]["front_default"];
-      
-      let res = await fetch(pokemon["species"]["url"]);
-      const pokemon_desc = await res.json();
-      // console.log(pokemon_desc);
-      
-      const pokemon_desc_1 = pokemon_desc["flavor_text_entries"][16]["flavor_text"];
-
-      const pokemon_desc_2 = pokemon_desc["flavor_text_entries"][40]["flavor_text"];
-      
-      const pokemon_desc_3 = pokemon_desc["flavor_text_entries"][57]["flavor_text"]; 
-      
-      document.getElementById("pokemon_img").src = pokemon_sprite;
-      document.getElementById("pokemon_img2").src = pokemon_sprite;
-      
       document.getElementById("pokemon_nom").innerText = pokemon_name;
       
-      document.getElementById("poke_desc_1").innerText = pokemon_desc_1;
-       document.getElementById("poke_desc_2").innerText = pokemon_desc_2;
-      document.getElementById("poke_desc_3").innerText = pokemon_desc_3; 
-     
       
+      const pokemon_type = pokemon["types"];
+      console.log(pokemon_type);
+
       let type_div = document.getElementById("pokemon_type");
       for(let i = 0; i < pokemon_type.length; i++){
         let type = document.createElement("span");
@@ -193,8 +218,46 @@ function valid(e) {
         console.log(type)
 
       }
-      
-      
 
+      const pokemon_sprite = pokemon["sprites"]["front_default"];
+       document.getElementById("pokemon_img").src = pokemon_sprite;
+      document.getElementById("pokemon_img2").src = pokemon_sprite;
+      
+      
+      let res = await fetch(pokemon["species"]["url"]);
+      const pokemon_desc = await res.json();
+      // console.log(pokemon_desc);
+      
+      const pokemon_desc_fr = pokemon_desc.flavor_text_entries.filter(entry => entry.language.name === "fr");
+      console.log(pokemon_desc_fr);
+
+      const uniqueDescriptions = new Set();
+pokemon_desc_fr.forEach(entry => uniqueDescriptions.add(entry.flavor_text));
+
+
+
+
+      let desc_fr_1 = document.getElementById("pokemon_desc");
+
+      if (uniqueDescriptions.size >0 ){
+
+        const uniqueDescriptionsArray = Array.from(uniqueDescriptions);
+        for(let i = 0; i < Math.min(3, uniqueDescriptionsArray.length); i++){
+          let desc_fr =  document.createElement("div");
+          
+          desc_fr.innerText = uniqueDescriptionsArray[i];
+          
+          
+          desc_fr_1.append(desc_fr);
+          console.log(desc_fr)
+
+        }
+
+      } else{
+        const pokemon_desc_err = " Pas de déscription fr disponible pour ce pokémon :D"
+        document.getElementById("pokemon_desc").innerText = pokemon_desc_err;
+      }
+      
+      
 
     };
