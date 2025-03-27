@@ -165,10 +165,13 @@
           <br>
           
         <div id="pokemon_sec" class=" flex flex-col-reverse items-center justify-around  max-h-full ">
-          
-          <input type="search"  name="search_pokemon" placeholder="Cherchez votre pokemon" id="search_pokemon" class=" md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-1  text-center"> 
-          
-          <button type="button" onclick="random_poke()" class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 text-black rounded-full my-1  text-center  hover:text-white hover:bg-violet-600 hover:border-hidden transition duration-450 " >Pokemon aléatoire</button>
+          <div class="flex md:hidden border-black border-solid border-2 min-w-50 w-5/10  text-black rounded-full my-1  " >
+          <input type="search"  id="search_poke" placeholder="Cherchez votre pokemon"  class=" w-full text-center outline-none  text-lg">
+          <button type="button"  onclick="search_pokemon()"   name=""> <img class=" max-w-10  " src="./img/POKEBALL.png"> </button>
+        </div>
+        <div class=" md:hidden text-red-500  text-sm " id="er_pokemon_1"> </div>
+        
+          <button type="button" onclick="random_poke()" class="md:hidden border-black border-solid border-2 min-w-50 w-5/10 h-10 text-black rounded-full my-1  text-center  hover:text-white hover:bg-violet-600 hover:border-hidden transition duration-450 " >Pokemon aléatoire</button>
         
             <div class=" text-center flex   flex-col justify-evenly min-h-100 " id="pokemon_desc">
               
@@ -179,9 +182,15 @@
 
         <div class="hidden md:flex flex-col items-center w-5/10 ">
           <br>
-          <input type="search" placeholder="Cherchez votre pokemon" id="search_pokemon" class="border-black border-solid border-2 min-w-50 w-5/10 max-w-100 text-black rounded-full   text-center">
+          <div class="flex justify-end border-black border-solid border-2 min-w-50 w-5/10 max-w-100  text-black rounded-full   " >
+          <input type="text" id="search_poke_1"  class="w-full text-center text-lg   outline-none " placeholder="Cherchez votre pokemon" >
+          <button type="button"  onclick="search_pokemon()" placeholder="Cherchez votre pokemon"  class=" "> <img class=" max-w-10 " src="./img/POKEBALL.png"> </button>
+          </div>
+
+          <div class="  text-red-500  text-sm  " id="er_pokemon"> </div>
+
           <br>
-          <button type="button" onclick="random_poke()"  class="border-black border-solid border-2 rounded-full min-w-50 w-5/10 max-w-100 text-center text-black hover:text-white hover:bg-violet-600 transition duration-450 " >Pokemon aléatoire</button>
+          <button type="button" onclick="random_poke()"  class="border-black border-solid border-2 rounded-full min-w-50 w-5/10 max-w-100 h-10 text-center text-black hover:text-white hover:bg-violet-600 transition duration-450 " >Pokemon aléatoire</button>
           
           <img  class="w-full  max-w-150 "  src="" alt="pokemon" id="pokemon_img2">
       </div>    

@@ -187,6 +187,74 @@ function valid(e) {
     }; 
 
 
+    async function search_pokemon(){
+      let search = document.getElementById("search_poke");
+      let search_1 = document.getElementById("search_poke_1");
+
+     
+
+      let filled_Field 
+      if (search.value.trim() !== "") {
+          filled_Field = search.value;
+
+
+      } else if (search_1.value.trim() !== "") {
+          filled_Field = search_1.value;
+          
+
+      } else{
+        document.getElementById("er_pokemon").innerText = " veuillez mettre le nom ou l'id de votre pokemon !!!!";
+        document.getElementById("er_pokemon_1").innerText = " veuillez mettre le nom ou l'id de votre pokemon !!!";
+        return
+      }
+  
+      try {
+        const search_data = poke_url + filled_Field;
+       
+        const response = await fetch(search_data);
+        if (!response.ok) {
+          document.getElementById("er_pokemon").innerText = " aucun pokemon trouvé  ";
+          document.getElementById("er_pokemon_1").innerText = " aucun pokemon trouvé ";
+            throw new Error(`Erreur HTTP: ${response.status}`);
+          
+
+          } else{
+            document.getElementById("er_pokemon").innerText = "";
+          document.getElementById("er_pokemon_1").innerText = "";
+          }
+          
+        let desc_fr_1 = document.getElementById("pokemon_desc");
+        let typesDiv = document.getElementById("pokemon_type");
+        
+        while (typesDiv.firstChild) {
+            typesDiv.firstChild.remove();
+            
+        }
+  
+        while (desc_fr_1.hasChildNodes()) {
+          desc_fr_1.firstChild.remove();
+        } 
+  
+  
+  
+          
+          const pokemon = await response.json();
+          
+          
+          displayPokemonCard(pokemon);
+      }
+          
+         catch (error) {
+          console.log("ereur avec le pokemon :" + error  );
+
+        }
+      }
+
+
+
+    
+
+
 
 
 
